@@ -2,9 +2,11 @@ Pre-req:
 - Install Python
 - Install pip
 - Install robotframework
+- Install IDE
 - Install Java
 - Install Node.js
-- Install appium 
+- Install appium
+- Install Android Studio (For emulator)
 - Install Sample Android Login Test apk in your test device
 
 If run this on Windows env:
