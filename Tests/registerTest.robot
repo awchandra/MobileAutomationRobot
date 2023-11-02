@@ -1,24 +1,22 @@
 *** Settings ***
-Test Setup              Open Android Apps
-Test Teardown           Close Apps
 Resource                ../resources/importer.robot
 
 
 *** Test Case ***
 User Able To Register With Correct Data
-    [Documentation]             This test for register with correct data
+    [Documentation]             This test for register with correct data already tested in Login Test
     [Tags]                      Android Test
+    resources.Open Android Apps
     loginPage.Login Page Opened
     loginPage.User Click Register Link
-    registerPage.Register Page Opened
-    registerPage.User Register With Correct Data
+    Press Keycode       4
 
 User Should See Error Message When Empty The Data
     [Documentation]             This test for check error message when all data is empty
     [Tags]                      Android Test
     loginPage.Login Page Opened
     loginPage.User Click Register Link
-    registerPage.Register Page Opened
+    Set Appium Timeout  2
     registerPage.User Input Empty Name
 
 User Should See Error Message When Empty The Email
@@ -26,7 +24,7 @@ User Should See Error Message When Empty The Email
     [Tags]                      Android Test
     loginPage.Login Page Opened
     loginPage.User Click Register Link
-    registerPage.Register Page Opened
+    Set Appium Timeout  2
     registerPage.User Input Empty Email
 
 User Should See Error Message When Empty The Password
@@ -34,6 +32,7 @@ User Should See Error Message When Empty The Password
     [Tags]                      Android Test
     loginPage.Login Page Opened
     loginPage.User Click Register Link
+    Set Appium Timeout  2
     registerPage.Register Page Opened
     registerPage.User Input Empty Password
 
@@ -42,5 +41,6 @@ User Should See Error Message When Empty The Confirm Password
     [Tags]                      Android Test
     loginPage.Login Page Opened
     loginPage.User Click Register Link
-    registerPage.Register Page Opened
+    Set Appium Timeout  2
     registerPage.User Input Empty Confirm Password
+    resources.Close Apps

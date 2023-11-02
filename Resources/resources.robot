@@ -7,13 +7,12 @@ Open Android Apps
     Open Application                ${appiumServer}
     ...                             udid=${udid}
     ...                             platformName=${platformName}
+    ...                             automationName=${automationName}
     ...                             deviceName=${udid}
-    ...                             app=${apk}
     ...                             appPackage=${appPackage}
     ...                             appActivity=${appPackageActivity}
     ...                             autoGrantPermissions=${True}
     Sleep                           3
-    Reset Application
 
 Close Apps
     Close Application

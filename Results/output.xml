@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231102 16:02:18.580" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231102 21:47:59.348" rpa="false" schemaversion="4">
 <suite id="s1" name="loginTest &amp; registerTest">
 <suite id="s1-s1" name="loginTest" source="C:\Pintu\MobileAutomationRobot\Tests\loginTest.robot">
-<test id="s1-s1-t1" name="User Able To Login With Correct Credential" line="8">
-<kw name="Open Android Apps" library="resources" type="SETUP">
+<test id="s1-s1-t1" name="User Able To Login With Correct Credential" line="5">
+<kw name="Open Android Apps" library="resources">
 <doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>${appiumServer}</arg>
 <arg>udid=${udid}</arg>
 <arg>platformName=${platformName}</arg>
+<arg>automationName=${automationName}</arg>
 <arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
 <arg>appPackage=${appPackage}</arg>
 <arg>appActivity=${appPackageActivity}</arg>
 <arg>autoGrantPermissions=${True}</arg>
@@ -21,319 +21,410 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:21.908" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:21.893" endtime="20231102 16:02:21.908"/>
-</kw>
-<msg timestamp="20231102 16:02:21.924" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:21.932" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:21.940"/>
+<status status="PASS" starttime="20231102 21:48:02.426" endtime="20231102 21:48:16.193"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:21.940" endtime="20231102 16:02:21.940"/>
+<msg timestamp="20231102 21:48:19.193" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231102 21:48:16.193" endtime="20231102 21:48:19.193"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:21.940" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:21.940" endtime="20231102 16:02:21.956"/>
+<status status="PASS" starttime="20231102 21:48:02.426" endtime="20231102 21:48:19.193"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:21.956"/>
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:19.308" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:19.308" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:19.193" endtime="20231102 21:48:19.308"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:21.971" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:21.971" endtime="20231102 16:02:21.971"/>
+<status status="PASS" starttime="20231102 21:48:19.193" endtime="20231102 21:48:19.308"/>
 </kw>
-<msg timestamp="20231102 16:02:21.987" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.002" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:21.971" endtime="20231102 16:02:22.002"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:19.386" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:48:19.386" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:48:19.322" endtime="20231102 21:48:19.386"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:21.956" endtime="20231102 16:02:22.002">No application is open</status>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:19.402" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:48:19.591" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:48:19.386" endtime="20231102 21:48:19.591"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:19.308" endtime="20231102 21:48:19.591"/>
+</kw>
+<kw name="Register Page Opened" library="registerPage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231102 21:48:20.313" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName
+criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:48:19.591" endtime="20231102 21:48:20.313"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:19.591" endtime="20231102 21:48:20.313"/>
+</kw>
+<kw name="User Register With Correct Data" library="registerPage">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:20.313" level="INFO">Typing text 'New User' into text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:48:20.910" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:48:20.313" endtime="20231102 21:48:20.910"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:20.926" level="INFO">Typing text 'NewUser750@gmail.com' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:21.585" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:20.910" endtime="20231102 21:48:21.585"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:21.585" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:22.229" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:21.585" endtime="20231102 21:48:22.229"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_CONFIRM_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:22.244" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextConfirmPassword'</msg>
+<msg timestamp="20231102 21:48:22.903" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextConfirmPassword</msg>
+<status status="PASS" starttime="20231102 21:48:22.229" endtime="20231102 21:48:22.903"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:22.903" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonRegister'.</msg>
+<msg timestamp="20231102 21:48:23.594" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonRegister</msg>
+<status status="PASS" starttime="20231102 21:48:22.903" endtime="20231102 21:48:23.594"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:48:23.594" endtime="20231102 21:48:24.933"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:20.313" endtime="20231102 21:48:24.933"/>
+</kw>
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:25.492" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:25.492" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:24.933" endtime="20231102 21:48:25.492"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:24.933" endtime="20231102 21:48:25.492"/>
+</kw>
+<kw name="User Login With Correct Credential" library="loginPage">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:25.492" level="INFO">Typing text 'NewUser750@gmail.com' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:25.774" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:25.492" endtime="20231102 21:48:25.774"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:25.774" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:26.481" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:25.774" endtime="20231102 21:48:26.481"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:26.497" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonLogin'.</msg>
+<msg timestamp="20231102 21:48:27.172" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonLogin</msg>
+<status status="PASS" starttime="20231102 21:48:26.481" endtime="20231102 21:48:27.172"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:25.492" endtime="20231102 21:48:27.172"/>
+</kw>
+<kw name="Home Page Opened" library="homePage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${TITLE}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:28.772" level="INFO">Current page contains element '//android.widget.TextView[@index='0']'.</msg>
+<msg timestamp="20231102 21:48:28.772" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:27.187" endtime="20231102 21:48:28.772"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${TITLE}</arg>
+<arg>${title_homepage}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:28.772" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Android NewLine Learning'.</msg>
+<msg timestamp="20231102 21:48:29.635" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:28.772" endtime="20231102 21:48:29.635"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${HOME_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:29.635" level="INFO">Verifying element 'id=com.loginmodule.learning:id/textViewEmail' contains text 'NewUser750@gmail.com'.</msg>
+<msg timestamp="20231102 21:48:29.870" level="INFO">criteria is com.loginmodule.learning:id/textViewEmail</msg>
+<status status="PASS" starttime="20231102 21:48:29.635" endtime="20231102 21:48:29.870"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:27.172" endtime="20231102 21:48:29.870"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:48:29.870" endtime="20231102 21:48:30.646"/>
 </kw>
 <doc>This test for login with correct credential</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:22.002">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:02.426" endtime="20231102 21:48:30.646"/>
 </test>
-<test id="s1-s1-t2" name="User Cannot Login With Invalid Email Address" line="17">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.132" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.132" endtime="20231102 16:02:22.132"/>
+<test id="s1-s1-t2" name="User Cannot Login With Invalid Email Address" line="18">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:31.256" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:31.256" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:30.646" endtime="20231102 21:48:31.256"/>
 </kw>
-<msg timestamp="20231102 16:02:22.132" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.144" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.144"/>
+<status status="PASS" starttime="20231102 21:48:30.646" endtime="20231102 21:48:31.256"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:22.144" endtime="20231102 16:02:22.144"/>
+<kw name="User Login With Invalid Email Address" library="loginPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:31.256" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:31.461" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:31.256" endtime="20231102 21:48:31.461"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:22.144" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:22.144" endtime="20231102 16:02:22.175"/>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:31.461" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:32.077" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:31.461" endtime="20231102 21:48:32.077"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.175"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${invalid_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:32.077" level="INFO">Typing text 'trial123' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:32.933" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:32.077" endtime="20231102 21:48:32.933"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.191" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.191" endtime="20231102 16:02:22.206"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:32.949" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:33.608" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:32.933" endtime="20231102 21:48:33.608"/>
 </kw>
-<msg timestamp="20231102 16:02:22.206" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.206" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.191" endtime="20231102 16:02:22.206"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:33.608" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonLogin'.</msg>
+<msg timestamp="20231102 21:48:34.941" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonLogin</msg>
+<status status="PASS" starttime="20231102 21:48:33.608" endtime="20231102 21:48:34.941"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.175" endtime="20231102 16:02:22.222">No application is open</status>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL_ERROR}</arg>
+<arg>${login_empty_email_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:34.941" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Valid Email'.</msg>
+<msg timestamp="20231102 21:48:35.566" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:34.941" endtime="20231102 21:48:35.566"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:31.256" endtime="20231102 21:48:35.566"/>
 </kw>
 <doc>This test for login with invalid email</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.233">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:30.646" endtime="20231102 21:48:35.566"/>
 </test>
-<test id="s1-s1-t3" name="User Cannot Login With Empty Email and Password" line="23">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.269" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.269" endtime="20231102 16:02:22.269"/>
+<test id="s1-s1-t3" name="User Cannot Login With Empty Email and Password" line="24">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:35.692" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:35.692" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:35.566" endtime="20231102 21:48:35.692"/>
 </kw>
-<msg timestamp="20231102 16:02:22.269" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.285" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:22.238" endtime="20231102 16:02:22.301"/>
+<status status="PASS" starttime="20231102 21:48:35.566" endtime="20231102 21:48:35.692"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.301"/>
+<kw name="User Login With Empty Email and Password" library="loginPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:35.692" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:35.959" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:35.692" endtime="20231102 21:48:35.959"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:22.301" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.301"/>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:35.959" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:36.587" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:35.959" endtime="20231102 21:48:36.587"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.238" endtime="20231102 16:02:22.301"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:36.587" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonLogin'.</msg>
+<msg timestamp="20231102 21:48:37.811" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonLogin</msg>
+<status status="PASS" starttime="20231102 21:48:36.587" endtime="20231102 21:48:37.811"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.316" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.333"/>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL_ERROR}</arg>
+<arg>${login_empty_email_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:37.811" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Valid Email'.</msg>
+<msg timestamp="20231102 21:48:38.720" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:37.811" endtime="20231102 21:48:38.720"/>
 </kw>
-<msg timestamp="20231102 16:02:22.348" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.364" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.379"/>
-</kw>
-<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.379">No application is open</status>
+<status status="PASS" starttime="20231102 21:48:35.692" endtime="20231102 21:48:38.720"/>
 </kw>
 <doc>This test for login with empty credential</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:22.233" endtime="20231102 16:02:22.379">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:35.566" endtime="20231102 21:48:38.720"/>
 </test>
-<test id="s1-s1-t4" name="User Cannot Login With Empty Email" line="29">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.473" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.473" endtime="20231102 16:02:22.489"/>
+<test id="s1-s1-t4" name="User Cannot Login With Empty Email" line="30">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:38.846" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:38.846" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:38.720" endtime="20231102 21:48:38.846"/>
 </kw>
-<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.489" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.489"/>
+<status status="PASS" starttime="20231102 21:48:38.720" endtime="20231102 21:48:38.846"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:22.489" endtime="20231102 16:02:22.489"/>
+<kw name="User Login With Empty Email Address" library="loginPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:38.846" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:39.050" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:38.846" endtime="20231102 21:48:39.050"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:22.489" endtime="20231102 16:02:22.489"/>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:39.050" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:39.709" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:39.050" endtime="20231102 21:48:39.709"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.489"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:39.709" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:40.400" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:39.709" endtime="20231102 21:48:40.400"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.520" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.520" endtime="20231102 16:02:22.536"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:40.400" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonLogin'.</msg>
+<msg timestamp="20231102 21:48:41.106" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonLogin</msg>
+<status status="PASS" starttime="20231102 21:48:40.400" endtime="20231102 21:48:41.106"/>
 </kw>
-<msg timestamp="20231102 16:02:22.552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.552" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.520" endtime="20231102 16:02:22.568"/>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL_ERROR}</arg>
+<arg>${login_empty_email_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:41.106" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Valid Email'.</msg>
+<msg timestamp="20231102 21:48:41.922" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:41.106" endtime="20231102 21:48:41.922"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.505" endtime="20231102 16:02:22.568">No application is open</status>
+<status status="PASS" starttime="20231102 21:48:38.846" endtime="20231102 21:48:41.922"/>
 </kw>
 <doc>This test for login with empty email</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.568">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:38.720" endtime="20231102 21:48:41.922"/>
 </test>
-<test id="s1-s1-t5" name="User Cannot Login With Empty Password" line="35">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.614" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.614" endtime="20231102 16:02:22.630"/>
+<test id="s1-s1-t5" name="User Cannot Login With Empty Password" line="36">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:42.095" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:42.095" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:41.922" endtime="20231102 21:48:42.095"/>
 </kw>
-<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.634" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.634"/>
+<status status="PASS" starttime="20231102 21:48:41.922" endtime="20231102 21:48:42.095"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:22.634" endtime="20231102 16:02:22.634"/>
+<kw name="User Login With Empty Password" library="loginPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:42.095" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:42.299" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:42.095" endtime="20231102 21:48:42.299"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:22.634" endtime="20231102 16:02:22.634"/>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${LOGIN_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:42.299" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:48:42.989" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:48:42.299" endtime="20231102 21:48:42.989"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.634"/>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:43.005" level="INFO">Typing text 'NewUser750@gmail.com' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:48:43.742" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:42.989" endtime="20231102 21:48:43.742"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:48:43.742" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonLogin'.</msg>
+<msg timestamp="20231102 21:48:45.484" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonLogin</msg>
+<status status="PASS" starttime="20231102 21:48:43.742" endtime="20231102 21:48:45.484"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL_ERROR}</arg>
+<arg>${login_empty_email_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:48:45.484" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Valid Email'.</msg>
+<msg timestamp="20231102 21:48:45.845" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:48:45.484" endtime="20231102 21:48:45.845"/>
+</kw>
+<status status="PASS" starttime="20231102 21:48:42.095" endtime="20231102 21:48:45.845"/>
+</kw>
+<kw name="Close Apps" library="resources">
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:22.646" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.662"/>
+<status status="PASS" starttime="20231102 21:48:45.845" endtime="20231102 21:48:46.552"/>
 </kw>
-<msg timestamp="20231102 16:02:22.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.693" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.693"/>
-</kw>
-<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.693">No application is open</status>
+<status status="PASS" starttime="20231102 21:48:45.845" endtime="20231102 21:48:46.552"/>
 </kw>
 <doc>This test for login with empty password</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.693">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:41.922" endtime="20231102 21:48:46.552"/>
 </test>
-<status status="FAIL" starttime="20231102 16:02:18.863" endtime="20231102 16:02:22.740"/>
+<status status="PASS" starttime="20231102 21:47:59.426" endtime="20231102 21:48:46.552"/>
 </suite>
 <suite id="s1-s2" name="registerTest" source="C:\Pintu\MobileAutomationRobot\Tests\registerTest.robot">
-<test id="s1-s2-t1" name="User Able To Register With Correct Data" line="8">
-<kw name="Open Android Apps" library="resources" type="SETUP">
+<test id="s1-s2-t1" name="User Able To Register With Correct Data" line="6">
+<kw name="Open Android Apps" library="resources">
 <doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>${appiumServer}</arg>
 <arg>udid=${udid}</arg>
 <arg>platformName=${platformName}</arg>
+<arg>automationName=${automationName}</arg>
 <arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
 <arg>appPackage=${appPackage}</arg>
 <arg>appActivity=${appPackageActivity}</arg>
 <arg>autoGrantPermissions=${True}</arg>
@@ -344,354 +435,485 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:23.148" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:23.148" endtime="20231102 16:02:23.148"/>
-</kw>
-<msg timestamp="20231102 16:02:23.148" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:23.446" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:23.012" endtime="20231102 16:02:23.509"/>
+<status status="PASS" starttime="20231102 21:48:46.630" endtime="20231102 21:48:56.377"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:23.541" endtime="20231102 16:02:23.541"/>
+<msg timestamp="20231102 21:48:59.377" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231102 21:48:56.377" endtime="20231102 21:48:59.377"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:23.556" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:23.556" endtime="20231102 16:02:24.482"/>
+<status status="PASS" starttime="20231102 21:48:46.630" endtime="20231102 21:48:59.377"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:22.960" endtime="20231102 16:02:24.482"/>
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:48:59.933" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:48:59.933" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:48:59.377" endtime="20231102 21:48:59.948"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:24.482" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.482"/>
+<status status="PASS" starttime="20231102 21:48:59.377" endtime="20231102 21:48:59.948"/>
 </kw>
-<msg timestamp="20231102 16:02:24.498" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:24.498" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.498"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:00.043" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:00.043" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:48:59.948" endtime="20231102 21:49:00.043"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.498">No application is open</status>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:00.043" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:00.262" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:00.043" endtime="20231102 21:49:00.262"/>
 </kw>
-<doc>This test for register with correct data</doc>
+<status status="PASS" starttime="20231102 21:48:59.948" endtime="20231102 21:49:00.262"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:49:00.262" endtime="20231102 21:49:01.643"/>
+</kw>
+<doc>This test for register with correct data already tested in Login Test</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:22.960" endtime="20231102 16:02:24.498">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:48:46.615" endtime="20231102 21:49:01.643"/>
 </test>
-<test id="s1-s2-t2" name="User Should See Error Message When Empty The Data" line="16">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:24.969" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.969"/>
+<test id="s1-s2-t2" name="User Should See Error Message When Empty The Data" line="14">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:02.177" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:49:02.177" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:01.643" endtime="20231102 21:49:02.177"/>
 </kw>
-<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:24.969" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.969"/>
+<status status="PASS" starttime="20231102 21:49:01.643" endtime="20231102 21:49:02.177"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.969"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:02.287" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:02.287" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:02.177" endtime="20231102 21:49:02.287"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.984"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:02.287" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:02.510" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:02.287" endtime="20231102 21:49:02.510"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.984"/>
+<status status="PASS" starttime="20231102 21:49:02.177" endtime="20231102 21:49:02.510"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:24.984" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984"/>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>2</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20231102 21:49:02.510" endtime="20231102 21:49:02.510"/>
 </kw>
-<msg timestamp="20231102 16:02:24.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:24.984" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984"/>
+<kw name="User Input Empty Name" library="registerPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:02.510" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:03.720" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:02.510" endtime="20231102 21:49:03.720"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984">No application is open</status>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:03.720" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:04.332" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:03.720" endtime="20231102 21:49:04.332"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:04.348" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:49:04.975" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:49:04.332" endtime="20231102 21:49:04.975"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_CONFIRM_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:04.975" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextConfirmPassword'</msg>
+<msg timestamp="20231102 21:49:05.933" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextConfirmPassword</msg>
+<status status="PASS" starttime="20231102 21:49:04.975" endtime="20231102 21:49:05.933"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:05.933" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonRegister'.</msg>
+<msg timestamp="20231102 21:49:07.236" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonRegister</msg>
+<status status="PASS" starttime="20231102 21:49:05.933" endtime="20231102 21:49:07.236"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${REGISTER_EMPTY_NAME_ERROR}</arg>
+<arg>${register_empty_name_error_message}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:49:07.236" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Full Name'.</msg>
+<msg timestamp="20231102 21:49:08.287" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:49:07.236" endtime="20231102 21:49:08.287"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:49:08.287" endtime="20231102 21:49:09.025"/>
+</kw>
+<status status="PASS" starttime="20231102 21:49:02.510" endtime="20231102 21:49:09.025"/>
 </kw>
 <doc>This test for check error message when all data is empty</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.984">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:49:01.643" endtime="20231102 21:49:09.025"/>
 </test>
-<test id="s1-s2-t3" name="User Should See Error Message When Empty The Email" line="24">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:25.094" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:25.094" endtime="20231102 16:02:25.094"/>
+<test id="s1-s2-t3" name="User Should See Error Message When Empty The Email" line="22">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:09.605" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:49:09.605" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:09.040" endtime="20231102 21:49:09.605"/>
 </kw>
-<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:25.110" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.110"/>
+<status status="PASS" starttime="20231102 21:49:09.040" endtime="20231102 21:49:09.605"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:25.110" endtime="20231102 16:02:25.110"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:09.715" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:09.715" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:09.605" endtime="20231102 21:49:09.715"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:25.110" endtime="20231102 16:02:25.141"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:09.726" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:09.935" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:09.715" endtime="20231102 21:49:09.935"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.141"/>
+<status status="PASS" starttime="20231102 21:49:09.605" endtime="20231102 21:49:09.935"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:25.141" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141"/>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>2</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20231102 21:49:09.950" endtime="20231102 21:49:09.950"/>
 </kw>
-<msg timestamp="20231102 16:02:25.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:25.141" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141"/>
+<kw name="User Input Empty Email" library="registerPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:09.966" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:11.174" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:09.950" endtime="20231102 21:49:11.174"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141">No application is open</status>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:11.189" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:11.833" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:11.174" endtime="20231102 21:49:11.833"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:11.849" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:49:12.477" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:49:11.833" endtime="20231102 21:49:12.477"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_CONFIRM_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:12.477" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextConfirmPassword'</msg>
+<msg timestamp="20231102 21:49:13.435" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextConfirmPassword</msg>
+<status status="PASS" starttime="20231102 21:49:12.477" endtime="20231102 21:49:13.435"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:13.450" level="INFO">Typing text 'New User' into text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:14.108" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:13.435" endtime="20231102 21:49:14.108"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:14.124" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonRegister'.</msg>
+<msg timestamp="20231102 21:49:15.804" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonRegister</msg>
+<status status="PASS" starttime="20231102 21:49:14.108" endtime="20231102 21:49:15.804"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${REGISTER_EMPTY_NAME_ERROR}</arg>
+<arg>${register_empty_email_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:49:15.819" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Valid Email'.</msg>
+<msg timestamp="20231102 21:49:16.166" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:49:15.804" endtime="20231102 21:49:16.166"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:49:16.166" endtime="20231102 21:49:17.420"/>
+</kw>
+<status status="PASS" starttime="20231102 21:49:09.950" endtime="20231102 21:49:17.420"/>
 </kw>
 <doc>This test for check error message when email is empty</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.141">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:49:09.025" endtime="20231102 21:49:17.420"/>
 </test>
-<test id="s1-s2-t4" name="User Should See Error Message When Empty The Password" line="32">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:25.941" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:25.941" endtime="20231102 16:02:25.941"/>
+<test id="s1-s2-t4" name="User Should See Error Message When Empty The Password" line="30">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:17.985" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:49:17.985" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:17.420" endtime="20231102 21:49:17.985"/>
 </kw>
-<msg timestamp="20231102 16:02:25.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.051" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.051"/>
+<status status="PASS" starttime="20231102 21:49:17.420" endtime="20231102 21:49:17.985"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:26.067" endtime="20231102 16:02:26.067"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:18.095" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:18.095" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:17.985" endtime="20231102 21:49:18.095"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:26.082" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:26.082" endtime="20231102 16:02:26.098"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:18.095" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:18.315" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:18.095" endtime="20231102 21:49:18.315"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.098"/>
+<status status="PASS" starttime="20231102 21:49:17.985" endtime="20231102 21:49:18.315"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
-<kw name="Close Application" library="AppiumLibrary">
-<doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:26.098" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.114"/>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>2</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20231102 21:49:18.315" endtime="20231102 21:49:18.315"/>
 </kw>
-<msg timestamp="20231102 16:02:26.142" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.145" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.145"/>
+<kw name="Register Page Opened" library="registerPage">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20231102 21:49:19.020" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:18.315" endtime="20231102 21:49:19.020"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.145">No application is open</status>
+<status status="PASS" starttime="20231102 21:49:18.315" endtime="20231102 21:49:19.020"/>
+</kw>
+<kw name="User Input Empty Password" library="registerPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:19.046" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:19.680" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:19.036" endtime="20231102 21:49:19.680"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:19.680" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:20.354" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:19.680" endtime="20231102 21:49:20.354"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:20.370" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:49:21.050" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:49:20.354" endtime="20231102 21:49:21.050"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_CONFIRM_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:21.050" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextConfirmPassword'</msg>
+<msg timestamp="20231102 21:49:21.704" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextConfirmPassword</msg>
+<status status="PASS" starttime="20231102 21:49:21.050" endtime="20231102 21:49:21.704"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:21.720" level="INFO">Typing text 'New User' into text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:22.409" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:21.704" endtime="20231102 21:49:22.409"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:22.409" level="INFO">Typing text 'NewUser750@gmail.com' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:23.131" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:22.409" endtime="20231102 21:49:23.131"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:23.131" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonRegister'.</msg>
+<msg timestamp="20231102 21:49:24.418" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonRegister</msg>
+<status status="PASS" starttime="20231102 21:49:23.131" endtime="20231102 21:49:24.418"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${REGISTER_EMPTY_NAME_ERROR}</arg>
+<arg>${register_empty_password_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:49:24.418" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Enter Password'.</msg>
+<msg timestamp="20231102 21:49:24.716" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:49:24.418" endtime="20231102 21:49:24.716"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:49:24.716" endtime="20231102 21:49:25.469"/>
+</kw>
+<status status="PASS" starttime="20231102 21:49:19.036" endtime="20231102 21:49:25.469"/>
 </kw>
 <doc>This test for check error message when password is empty</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.161">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:49:17.420" endtime="20231102 21:49:25.469"/>
 </test>
-<test id="s1-s2-t5" name="User Should See Error Message When Empty The Confirm Password" line="40">
-<kw name="Open Android Apps" library="resources" type="SETUP">
-<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>${appiumServer}</arg>
-<arg>udid=${udid}</arg>
-<arg>platformName=${platformName}</arg>
-<arg>deviceName=${udid}</arg>
-<arg>app=${apk}</arg>
-<arg>appPackage=${appPackage}</arg>
-<arg>appActivity=${appPackageActivity}</arg>
-<arg>autoGrantPermissions=${True}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:26.208" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:26.208" endtime="20231102 16:02:26.208"/>
+<test id="s1-s2-t5" name="User Should See Error Message When Empty The Confirm Password" line="39">
+<kw name="Login Page Opened" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${LOGIN_EMAIL}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:26.066" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textInputEditTextEmail'.</msg>
+<msg timestamp="20231102 21:49:26.066" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:25.469" endtime="20231102 21:49:26.066"/>
 </kw>
-<msg timestamp="20231102 16:02:26.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.223" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-</msg>
-<status status="FAIL" starttime="20231102 16:02:26.177" endtime="20231102 16:02:26.255"/>
+<status status="PASS" starttime="20231102 21:49:25.469" endtime="20231102 21:49:26.066"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231102 16:02:26.255" endtime="20231102 16:02:26.255"/>
+<kw name="User Click Register Link" library="loginPage">
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20231102 21:49:26.176" level="INFO">Current page contains element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:26.176" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:26.066" endtime="20231102 21:49:26.176"/>
 </kw>
-<kw name="Reset Application" library="AppiumLibrary">
-<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
-<msg timestamp="20231102 16:02:26.255" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<status status="NOT RUN" starttime="20231102 16:02:26.255" endtime="20231102 16:02:26.271"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${REGISTER_LINK}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:26.191" level="INFO">Clicking element 'id=com.loginmodule.learning:id/textViewLinkRegister'.</msg>
+<msg timestamp="20231102 21:49:26.411" level="INFO">criteria is com.loginmodule.learning:id/textViewLinkRegister</msg>
+<status status="PASS" starttime="20231102 21:49:26.176" endtime="20231102 21:49:26.411"/>
 </kw>
-<status status="FAIL" starttime="20231102 16:02:26.177" endtime="20231102 16:02:26.271"/>
+<status status="PASS" starttime="20231102 21:49:26.066" endtime="20231102 21:49:26.411"/>
 </kw>
-<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>2</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20231102 21:49:26.411" endtime="20231102 21:49:26.411"/>
+</kw>
+<kw name="User Input Empty Confirm Password" library="registerPage">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:26.411" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:27.620" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:26.411" endtime="20231102 21:49:27.620"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:27.620" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:28.279" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:27.620" endtime="20231102 21:49:28.279"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:28.295" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:49:28.968" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:49:28.279" endtime="20231102 21:49:28.968"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${REGISTER_CONFIRM_PASSWORD}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:28.970" level="INFO">Clear text field 'id=com.loginmodule.learning:id/textInputEditTextConfirmPassword'</msg>
+<msg timestamp="20231102 21:49:29.660" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextConfirmPassword</msg>
+<status status="PASS" starttime="20231102 21:49:28.968" endtime="20231102 21:49:29.660"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:29.669" level="INFO">Typing text 'New User' into text field 'id=com.loginmodule.learning:id/textInputEditTextName'</msg>
+<msg timestamp="20231102 21:49:30.304" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextName</msg>
+<status status="PASS" starttime="20231102 21:49:29.667" endtime="20231102 21:49:30.304"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_EMAIL}</arg>
+<arg>${correct_email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:30.319" level="INFO">Typing text 'NewUser750@gmail.com' into text field 'id=com.loginmodule.learning:id/textInputEditTextEmail'</msg>
+<msg timestamp="20231102 21:49:30.963" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextEmail</msg>
+<status status="PASS" starttime="20231102 21:49:30.304" endtime="20231102 21:49:30.963"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${REGISTER_PASSWORD}</arg>
+<arg>${correct_password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:30.972" level="INFO">Typing text 'trialPassword' into text field 'id=com.loginmodule.learning:id/textInputEditTextPassword'</msg>
+<msg timestamp="20231102 21:49:31.638" level="INFO">criteria is com.loginmodule.learning:id/textInputEditTextPassword</msg>
+<status status="PASS" starttime="20231102 21:49:30.963" endtime="20231102 21:49:31.638"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20231102 21:49:31.653" level="INFO">Clicking element 'id=com.loginmodule.learning:id/appCompatButtonRegister'.</msg>
+<msg timestamp="20231102 21:49:33.177" level="INFO">criteria is com.loginmodule.learning:id/appCompatButtonRegister</msg>
+<status status="PASS" starttime="20231102 21:49:31.638" endtime="20231102 21:49:33.177"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${REGISTER_EMPTY_NAME_ERROR}</arg>
+<arg>${register_empty_confirm_password_error}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231102 21:49:33.177" level="INFO">Verifying element '//android.widget.TextView[@index='0']' contains text 'Password Does Not Matches'.</msg>
+<msg timestamp="20231102 21:49:33.552" level="INFO">xpath criteria: //android.widget.TextView[@index='0']</msg>
+<status status="PASS" starttime="20231102 21:49:33.177" endtime="20231102 21:49:33.552"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20231102 21:49:33.552" endtime="20231102 21:49:34.289"/>
+</kw>
+<status status="PASS" starttime="20231102 21:49:26.411" endtime="20231102 21:49:34.289"/>
+</kw>
+<kw name="Close Apps" library="resources">
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20231102 16:02:26.286" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:26.286" endtime="20231102 16:02:26.302"/>
+<status status="PASS" starttime="20231102 21:49:34.289" endtime="20231102 21:49:34.964"/>
 </kw>
-<msg timestamp="20231102 16:02:26.318" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.318" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20231102 16:02:26.271" endtime="20231102 16:02:26.333"/>
-</kw>
-<status status="FAIL" starttime="20231102 16:02:26.271" endtime="20231102 16:02:26.333">No application is open</status>
+<status status="PASS" starttime="20231102 21:49:34.289" endtime="20231102 21:49:34.964"/>
 </kw>
 <doc>This test for check error message when confirm password is empty</doc>
 <tag>Android Test</tag>
-<status status="FAIL" starttime="20231102 16:02:26.161" endtime="20231102 16:02:26.333">Setup failed:
-WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20231102 21:49:25.469" endtime="20231102 21:49:34.964"/>
 </test>
-<status status="FAIL" starttime="20231102 16:02:22.881" endtime="20231102 16:02:26.342"/>
+<status status="PASS" starttime="20231102 21:48:46.577" endtime="20231102 21:49:34.964"/>
 </suite>
-<status status="FAIL" starttime="20231102 16:02:18.612" endtime="20231102 16:02:26.365"/>
+<status status="PASS" starttime="20231102 21:47:59.348" endtime="20231102 21:49:34.981"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="10" skip="0">All Tests</stat>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="10" skip="0">Android Test</stat>
+<stat pass="10" fail="0" skip="0">Android Test</stat>
 </tag>
 <suite>
-<stat pass="0" fail="10" skip="0" id="s1" name="loginTest &amp; registerTest">loginTest &amp; registerTest</stat>
-<stat pass="0" fail="5" skip="0" id="s1-s1" name="loginTest">loginTest &amp; registerTest.loginTest</stat>
-<stat pass="0" fail="5" skip="0" id="s1-s2" name="registerTest">loginTest &amp; registerTest.registerTest</stat>
+<stat pass="10" fail="0" skip="0" id="s1" name="loginTest &amp; registerTest">loginTest &amp; registerTest</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1" name="loginTest">loginTest &amp; registerTest.loginTest</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s2" name="registerTest">loginTest &amp; registerTest.registerTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231102 16:02:21.924" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:21.940" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:21.987" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.132" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.144" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:22.206" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.269" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.301" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:22.348" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:22.552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:22.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:23.148" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:23.556" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:24.498" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:24.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:25.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:25.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.082" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:26.142" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg timestamp="20231102 16:02:26.255" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
-<msg timestamp="20231102 16:02:26.318" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>

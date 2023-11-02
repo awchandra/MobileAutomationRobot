@@ -3,33 +3,41 @@ Resource        ../importer.robot
 
 *** Keywords ***
 Login Page Opened
-    Page Should Contain Element         ${EMAIL}
+    Page Should Contain Element         ${LOGIN_EMAIL}
 
 User Login With Correct Credential
-    Input Text          ${EMAIL}        ${correct_email}
-    Input Text          ${PASSWORD}    ${correct_password}
+    Input Text          ${LOGIN_EMAIL}          ${correct_email}
+    Input Text          ${LOGIN_PASSWORD}       ${correct_password}
     Click Element       ${LOGIN_BUTTON}
 
 User Click Register Link
-    Page Should Contain Element         ${REGISTER_LINK}
-    Click Text                          ${REGISTER_LINK}
+    Page Should Contain Element             ${REGISTER_LINK}
+    Click Element                           ${REGISTER_LINK}
 
 User Login With Empty Email Address
-    Input Text          ${PASSWORD}    ${correct_password}
+    Clear Text          ${LOGIN_EMAIL}
+    Clear Text          ${LOGIN_PASSWORD}
+    Input Text          ${LOGIN_PASSWORD}    ${correct_password}
     Click Element       ${LOGIN_BUTTON}
-    Element Should Contain Text    ${EMAIL_ERROR}       ${login_empty_email_error}
+    Element Should Contain Text    ${LOGIN_EMAIL_ERROR}       ${login_empty_email_error}
 
 User Login With Empty Password
-    Input Text          ${EMAIL}        ${correct_email}
+    Clear Text          ${LOGIN_EMAIL}
+    Clear Text          ${LOGIN_PASSWORD}
+    Input Text          ${LOGIN_EMAIL}        ${correct_email}
     Click Element       ${LOGIN_BUTTON}
-    Element Should Contain Text    ${EMAIL_ERROR}       ${login_empty_email_error}
+    Element Should Contain Text    ${LOGIN_EMAIL_ERROR}       ${login_empty_email_error}
 
 User Login With Empty Email and Password
+    Clear Text          ${LOGIN_EMAIL}
+    Clear Text          ${LOGIN_PASSWORD}
     Click Element       ${LOGIN_BUTTON}
-    Element Should Contain Text    ${EMAIL_ERROR}       ${login_empty_email_error}
+    Element Should Contain Text    ${LOGIN_EMAIL_ERROR}       ${login_empty_email_error}
 
 User Login With Invalid Email Address
-    Input Text          ${EMAIL}       ${invalid_email}
-    Input Text          ${PASSWORD}    ${correct_password}
+    Clear Text          ${LOGIN_EMAIL}
+    Clear Text          ${LOGIN_PASSWORD}
+    Input Text          ${LOGIN_EMAIL}       ${invalid_email}
+    Input Text          ${LOGIN_PASSWORD}    ${correct_password}
     Click Element       ${LOGIN_BUTTON}
-    Element Should Contain Text    ${EMAIL_ERROR}       ${login_empty_email_error}
+    Element Should Contain Text    ${LOGIN_EMAIL_ERROR}       ${login_empty_email_error}
