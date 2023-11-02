@@ -1,14 +1,13 @@
 *** Settings ***
-###Test Setup              Open Android Apps
-###Test Teardown           Close Apps
 Resource                ../resources/importer.robot
+Test Setup              Open Android Apps
+Test Teardown           Close Apps
 
 
 *** Test Case ***
 User Able To Login With Correct Credential
     [Documentation]             This test for login with correct credential
     [Tags]                      Android Test
-    Open Application              ${appiumServer}     platformName=${platformName}  deviceName=${udid}  app=${apk}  appPackage=${appPackage}    appActivity=${appPackageActivity}
     registerPage.Register Page Opened
     registerPage.User Register With Correct Data
     loginPage.Login Page Opened

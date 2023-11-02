@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231102 16:02:18.580" rpa="false" schemaversion="4">
+<suite id="s1" name="loginTest &amp; registerTest">
+<suite id="s1-s1" name="loginTest" source="C:\Pintu\MobileAutomationRobot\Tests\loginTest.robot">
+<test id="s1-s1-t1" name="User Able To Login With Correct Credential" line="8">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:21.908" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:21.893" endtime="20231102 16:02:21.908"/>
+</kw>
+<msg timestamp="20231102 16:02:21.924" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:21.932" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:21.940"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:21.940" endtime="20231102 16:02:21.940"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:21.940" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:21.940" endtime="20231102 16:02:21.956"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:21.956"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:21.971" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:21.971" endtime="20231102 16:02:21.971"/>
+</kw>
+<msg timestamp="20231102 16:02:21.987" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.002" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:21.971" endtime="20231102 16:02:22.002"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:21.956" endtime="20231102 16:02:22.002">No application is open</status>
+</kw>
+<doc>This test for login with correct credential</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:20.885" endtime="20231102 16:02:22.002">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t2" name="User Cannot Login With Invalid Email Address" line="17">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.132" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.132" endtime="20231102 16:02:22.132"/>
+</kw>
+<msg timestamp="20231102 16:02:22.132" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.144" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.144"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:22.144" endtime="20231102 16:02:22.144"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:22.144" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:22.144" endtime="20231102 16:02:22.175"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.175"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.191" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.191" endtime="20231102 16:02:22.206"/>
+</kw>
+<msg timestamp="20231102 16:02:22.206" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.206" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.191" endtime="20231102 16:02:22.206"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.175" endtime="20231102 16:02:22.222">No application is open</status>
+</kw>
+<doc>This test for login with invalid email</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:22.018" endtime="20231102 16:02:22.233">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t3" name="User Cannot Login With Empty Email and Password" line="23">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.269" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.269" endtime="20231102 16:02:22.269"/>
+</kw>
+<msg timestamp="20231102 16:02:22.269" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.285" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:22.238" endtime="20231102 16:02:22.301"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.301"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:22.301" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.301"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.238" endtime="20231102 16:02:22.301"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.316" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.333"/>
+</kw>
+<msg timestamp="20231102 16:02:22.348" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.364" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.379"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.301" endtime="20231102 16:02:22.379">No application is open</status>
+</kw>
+<doc>This test for login with empty credential</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:22.233" endtime="20231102 16:02:22.379">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t4" name="User Cannot Login With Empty Email" line="29">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.473" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.473" endtime="20231102 16:02:22.489"/>
+</kw>
+<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.489" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.489"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:22.489" endtime="20231102 16:02:22.489"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:22.489" endtime="20231102 16:02:22.489"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.489"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.520" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.520" endtime="20231102 16:02:22.536"/>
+</kw>
+<msg timestamp="20231102 16:02:22.552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.552" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.520" endtime="20231102 16:02:22.568"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.505" endtime="20231102 16:02:22.568">No application is open</status>
+</kw>
+<doc>This test for login with empty email</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:22.395" endtime="20231102 16:02:22.568">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t5" name="User Cannot Login With Empty Password" line="35">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.614" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.614" endtime="20231102 16:02:22.630"/>
+</kw>
+<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.634" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.634"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:22.634" endtime="20231102 16:02:22.634"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:22.634" endtime="20231102 16:02:22.634"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.634"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:22.646" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.662"/>
+</kw>
+<msg timestamp="20231102 16:02:22.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.693" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.693"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.646" endtime="20231102 16:02:22.693">No application is open</status>
+</kw>
+<doc>This test for login with empty password</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:22.583" endtime="20231102 16:02:22.693">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20231102 16:02:18.863" endtime="20231102 16:02:22.740"/>
+</suite>
+<suite id="s1-s2" name="registerTest" source="C:\Pintu\MobileAutomationRobot\Tests\registerTest.robot">
+<test id="s1-s2-t1" name="User Able To Register With Correct Data" line="8">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:23.148" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:23.148" endtime="20231102 16:02:23.148"/>
+</kw>
+<msg timestamp="20231102 16:02:23.148" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:23.446" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:23.012" endtime="20231102 16:02:23.509"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:23.541" endtime="20231102 16:02:23.541"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:23.556" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:23.556" endtime="20231102 16:02:24.482"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:22.960" endtime="20231102 16:02:24.482"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:24.482" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.482"/>
+</kw>
+<msg timestamp="20231102 16:02:24.498" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:24.498" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.498"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:24.482" endtime="20231102 16:02:24.498">No application is open</status>
+</kw>
+<doc>This test for register with correct data</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:22.960" endtime="20231102 16:02:24.498">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s2-t2" name="User Should See Error Message When Empty The Data" line="16">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:24.969" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.969"/>
+</kw>
+<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:24.969" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.969"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.969"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:24.969" endtime="20231102 16:02:24.984"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.984"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:24.984" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984"/>
+</kw>
+<msg timestamp="20231102 16:02:24.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:24.984" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:24.984" endtime="20231102 16:02:24.984">No application is open</status>
+</kw>
+<doc>This test for check error message when all data is empty</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:24.498" endtime="20231102 16:02:24.984">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s2-t3" name="User Should See Error Message When Empty The Email" line="24">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:25.094" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:25.094" endtime="20231102 16:02:25.094"/>
+</kw>
+<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:25.110" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.110"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:25.110" endtime="20231102 16:02:25.110"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:25.110" endtime="20231102 16:02:25.141"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.141"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:25.141" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141"/>
+</kw>
+<msg timestamp="20231102 16:02:25.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:25.141" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:25.141" endtime="20231102 16:02:25.141">No application is open</status>
+</kw>
+<doc>This test for check error message when email is empty</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:25.000" endtime="20231102 16:02:25.141">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s2-t4" name="User Should See Error Message When Empty The Password" line="32">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:25.941" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:25.941" endtime="20231102 16:02:25.941"/>
+</kw>
+<msg timestamp="20231102 16:02:25.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.051" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.051"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:26.067" endtime="20231102 16:02:26.067"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:26.082" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:26.082" endtime="20231102 16:02:26.098"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.098"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:26.098" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.114"/>
+</kw>
+<msg timestamp="20231102 16:02:26.142" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.145" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.145"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:26.098" endtime="20231102 16:02:26.145">No application is open</status>
+</kw>
+<doc>This test for check error message when password is empty</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:25.157" endtime="20231102 16:02:26.161">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s2-t5" name="User Should See Error Message When Empty The Confirm Password" line="40">
+<kw name="Open Android Apps" library="resources" type="SETUP">
+<doc>Fill in udid and deviceName parameter in data.robot with your udid</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${appiumServer}</arg>
+<arg>udid=${udid}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${udid}</arg>
+<arg>app=${apk}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appPackageActivity}</arg>
+<arg>autoGrantPermissions=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:26.208" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:26.208" endtime="20231102 16:02:26.208"/>
+</kw>
+<msg timestamp="20231102 16:02:26.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.223" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<status status="FAIL" starttime="20231102 16:02:26.177" endtime="20231102 16:02:26.255"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231102 16:02:26.255" endtime="20231102 16:02:26.255"/>
+</kw>
+<kw name="Reset Application" library="AppiumLibrary">
+<doc>*DEPRECATED!!* in selenium v4, check `Terminate Application` keyword.</doc>
+<msg timestamp="20231102 16:02:26.255" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<status status="NOT RUN" starttime="20231102 16:02:26.255" endtime="20231102 16:02:26.271"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:26.177" endtime="20231102 16:02:26.271"/>
+</kw>
+<kw name="Close Apps" library="resources" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231102 16:02:26.286" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:26.286" endtime="20231102 16:02:26.302"/>
+</kw>
+<msg timestamp="20231102 16:02:26.318" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.318" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20231102 16:02:26.271" endtime="20231102 16:02:26.333"/>
+</kw>
+<status status="FAIL" starttime="20231102 16:02:26.271" endtime="20231102 16:02:26.333">No application is open</status>
+</kw>
+<doc>This test for check error message when confirm password is empty</doc>
+<tag>Android Test</tag>
+<status status="FAIL" starttime="20231102 16:02:26.161" endtime="20231102 16:02:26.333">Setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20231102 16:02:22.881" endtime="20231102 16:02:26.342"/>
+</suite>
+<status status="FAIL" starttime="20231102 16:02:18.612" endtime="20231102 16:02:26.365"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="10" skip="0">Android Test</stat>
+</tag>
+<suite>
+<stat pass="0" fail="10" skip="0" id="s1" name="loginTest &amp; registerTest">loginTest &amp; registerTest</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s1" name="loginTest">loginTest &amp; registerTest.loginTest</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s2" name="registerTest">loginTest &amp; registerTest.registerTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231102 16:02:21.924" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:21.940" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:21.987" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.132" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.144" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:22.206" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.269" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.301" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:22.348" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.489" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:22.552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:22.634" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:22.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:23.148" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:23.556" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:24.498" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:24.969" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:24.984" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:25.110" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:25.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:25.957" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.082" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:26.142" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20231102 16:02:26.255" level="WARN">Keyword 'AppiumLibrary.Reset Application' is deprecated. in selenium v4, check `Terminate Application` keyword.</msg>
+<msg timestamp="20231102 16:02:26.318" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

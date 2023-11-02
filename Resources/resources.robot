@@ -8,6 +8,7 @@ Open Android Apps
     ...                             udid=${udid}
     ...                             platformName=${platformName}
     ...                             deviceName=${udid}
+    ...                             app=${apk}
     ...                             appPackage=${appPackage}
     ...                             appActivity=${appPackageActivity}
     ...                             autoGrantPermissions=${True}

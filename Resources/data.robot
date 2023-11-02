@@ -1,7 +1,7 @@
 *** Settings ***
 
 *** Variable ***
-${appiumServer}             http://127.0.0.1:4723/
+${appiumServer}             http://127.0.0.1:4723/wd/hub
 
 ${platformName}             Android
 ${apk}                      ./apk/Sample Android App - Login Tes.apk
